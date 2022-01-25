@@ -2,35 +2,65 @@
 <html lang="en">
 
 <head>
-  <title>Form Template</title>
+  <title>Data Processing</title>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/forms.css"/>
+  <link rel="stylesheet" href="css/data-processing.css"/>
 
 </head>
 
 <body>
   <header>
-    <h1>Form Template</h1>
+    <h1>Data Processing</h1>
     <nav class="topnav" id="myTopnav">
       <a href="index.html" class="active">Home</a>
       <a href="#" target="_blank">Name of Project</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
     </nav>
   </header>
-
   <main class="wrapper">
+    <p style="text-align: center;">page demonstrates data processing of queryString data with client-side JavaScript. <br/>
+      Upon submission, the cart items are added and the shipping info is processed using title case.
+   </p>
+    <div id="output">
     <form method="get" action="" class="main-form">
+      <h3>Widget Prices</h3>
+      <div id="widgets">
+        <div>
+            <b>Widget</b><br />
+            <p>Our Widgets are spring loaded and need no batteries!</p>
+            <p>At $3.99 they're a bargain!</p>
+            <p><label><input type="checkbox" name="Cart" value="Widget" />Add to cart</label></p>
+            <div class="pic"><img src="images/widget.png" alt="Picture of a widget"/></div>
+        </div>
+        <div>
+            <b>Sprocket</b><br />
+            <p>Our Sprockets are well made and hold up to extreme pressure!</p>
+            <p>They only cost $5.99!</p>
+            <p><label><input type="checkbox" name="Cart" value="Sprocket" />Add to cart</label></p>
+            <div class="pic"><img src="images/sprocket.png" alt="Picture of a sprocket" /></div>
+        </div>
+        <div>
+            <b>Thingy</b><br />
+            <p>Our Thingys have many uses, and people love them!</p>
+            <p>Such a deal at $1.99!</p>
+            <p><label><input type="checkbox" name="Cart" value="Thingy" />Add to cart</label></p>
+            <div class="pic"><img src="images/thingy.png" alt="Picture of a thingy"/></div>
+        </div>
+    </div>
+
+      <h3>Shipping Info</h3>
       <div>
         <label for="FirstName">First Name</label>:<br />
-        <input type="text" name="FirstName" placeholder="First Name" required="required" autofocus />
+        <input type="text" name="First_Name" placeholder="First Name" required="required" autofocus />
       </div>
       <div>
         <label for="LastName">Last Name</label>:<br />
-        <input type="text" name="LasttName" placeholder="Last Name" required="required" />
+        <input type="text" name="Last_Name" placeholder="Last Name" required="required" />
       </div>
       <div>
         <label for="Email">Email</label>:<br />
@@ -39,6 +69,11 @@
       <div>
         <label for="Address">Address</label>:<br />
         <input type="text" name="Address" placeholder="Please put your street address here required="
+          required="required" />
+      </div>
+      <div>
+        <label for="City">City</label>:<br />
+        <input type="text" name="City" placeholder=" Please put your city here required="
           required="required" />
       </div>
       <div>
@@ -52,27 +87,17 @@
         </select>
       </div>
       <div>
-        <fieldset>
-          <legend>Would You like to Join Our Mailing List?</legend>
-          <label><input type="radio" name="JoinMailingList" value="Yes" required="required" />Yes</label><br />
-          <label><input type="radio" name="JoinMailingList" value="No" />No</label>
-        </fieldset>
+        <label for="Postal_Code">Postal Code</label>:<br />
+        <input type="text" name="Postal_Code" placeholder="Please put your postal code here required="
+          required="required" />
       </div>
       <div>
-        <fieldset>
-          <legend>What are you interested in?</legend>
-          <label><input type="checkbox" name="InterestedIn" value="Website" required="required" />Website</label><br />
-          <label><input type="checkbox" name="InterestedIn" value="OnlineCalendar" />Online Calender</label><br />
-          <label><input type="checkbox" name="InterestedIn" value="ContactForm" />Contact Form</label><br />
-          <label><input type="checkbox" name="InterestedIn" value="Lollipops" />Complementary Lollipops</label>
-        </fieldset>
-      </div>
-      <div>
-        <label for="Comments">Comments</label>:<br />
-        <textarea name="comments" placeholder="Your opinion is important to us" cols="36" rows="4" ></textarea>
+        <label for="Notes">Notes</label>:<br />
+        <textarea name="notes" placeholder="Add any delivery notes here!" cols="36" rows="4" ></textarea>
       </div>
       <div><input type="submit" value="Submit" /></div>
     </form>
+  </div>
     <footer>
       <p>
         <small>&copy; 2021-<span id="copyright"></span> by
@@ -84,6 +109,7 @@
     </footer>
   </main>
   <script src="js/main.js"></script>
+  <script src="js/data-processing.js"></script>
 </body>
 
 </html>
